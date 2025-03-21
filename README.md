@@ -1,12 +1,38 @@
-# React + Vite
+# GifExpertApp
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Uso
 
-Currently, two official plugins are available:
+Esta aplicación permite buscar hasta 10 imágenes GIF por texto de búsqueda. Únicamente necesita escribir cualquier texto en el cuadro de búsqueda y presionar Enter. Automáticamente se mostrarán las imágenes encontradas.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Todas las búsquedas se acumularán en la página, y podrá eliminar alguna sección de búsqueda o restablecer toda la página.
 
-## Expanding the ESLint configuration
+![1742586994738](image/README/1742586994738.gif "Uso de GifExpertApp")
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Instalación
+
+* Clone este repositorio en su ordenador. Tome nota de la carpeta en la que guardó este repositorio (por ejemplo: */usr/source/gifexpertapp*).
+* Abra la Terminal desde la carpeta donde clonó el repositorio, y ejecute:
+
+```BASH
+yarn install
+```
+
+* Una vez que se terminen de instalar las dependencias, ejecute lo siguiente para visualizar GifExpertApp:
+
+```bash
+yarn dev
+```
+
+* Para modificarlo, puede visualizar la carpeta clonada en su editor de código preferido (se recomienda Visual Studio Code).
+
+### API KEY de GIPHY
+
+Este sitio utiliza una API KEY de GIPHY. Para obtenerla, debe registrarse de manera gratuita en el sitio [GIPHY Developers](https://developers.giphy.com/). Una vez creada la cuenta, dé clic en **Create an API Key** y siga las instrucciones.
+
+Cuando haya generado la API KEY de GIPHY, deberá renombrar el archivo `.env.example` a `.env` y pegar la API KEY en lugar de `your_api_key_here`.
+
+Este paso es indispensable para que funcionen las consultas dentro del sitio web GifExpertApp.
+
+## Agradecimientos
+
+Este proyecto forma parte de las prácticas del curso [React: De cero a experto ( Hooks y MERN )](https://www.udemy.com/course/react-cero-experto/) de [Fernando Herrera](https://www.udemy.com/course/react-cero-experto/#instructor-1), disponible en Udemy y en [{d/t} - DevTalles](https://cursos.devtalles.com/).
