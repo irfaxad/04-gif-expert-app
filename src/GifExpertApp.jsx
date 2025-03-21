@@ -1,11 +1,9 @@
 import { useState } from "react";
-import { AddCategory } from "./components/AddCategory";
-import { GifGrid } from "./components/GifGrid";
+import { AddCategory, GifGrid, ButtonReset } from "./components";
 
 export const GifExpertApp = () => {
-  const [categories, setCategories] = useState(["Naruto"]);
+  const [categories, setCategories] = useState([""]);
 
-  // Función para agregar una categoría
   const onAddCategory = (newCategory) => {
     if (!newCategory.trim()) {
       console.log("La categoría no puede estar vacía");
@@ -19,6 +17,16 @@ export const GifExpertApp = () => {
     setCategories([newCategory, ...categories]);
   };
 
+  const onDeleteCategory = (categoryToDelete) => {
+    setCategories(
+      categories.filter((category) => category !== categoryToDelete)
+    );
+  };
+
+  const onResetCategories = () => {
+    setCategories([""]);
+  };
+
   return (
     <>
       <div className="title">
@@ -27,10 +35,16 @@ export const GifExpertApp = () => {
       </div>
       <div className="search">
         <AddCategory onAddCategory={onAddCategory} />
+        <ButtonReset onReset={onResetCategories} label="Restablecer" />
       </div>
+
       <div className="list">
         {categories.map((category) => (
-          <GifGrid key={category} category={category} />
+          <GifGrid
+            key={category}
+            category={category}
+            onDelete={onDeleteCategory}
+          />
         ))}
       </div>
     </>

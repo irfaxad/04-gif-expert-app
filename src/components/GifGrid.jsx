@@ -1,18 +1,30 @@
-import { useState, useEffect } from "react";
-import { getGifs } from "../helpers/getGifs";
+import { GifItem, ButtonReset } from "../components";
+import { useFetchGifs } from "../hooks/useFetchGifs";
 
-export const GifGrid = ({ category }) => {
-  const [counter, setCounter] = useState(10);
+export const GifGrid = ({ category, onDelete }) => {
+  const { images, isLoading } = useFetchGifs(category);
 
-  useEffect(() => {
-    getGifs(category);
-  }, []);
+  const handleDelete = () => {
+    onDelete(category);
+  };
 
   return (
-    <>
-      <h3>{category}</h3>
-      <p>{counter}</p>
-      <button onClick={() => setCounter(counter + 1)}>+1</button>
-    </>
+    <div id={category}>
+      {category && (
+        <div className="card-header">
+          <h3>
+            Resultados para <em>{category}</em>
+          </h3>
+          <ButtonReset onReset={handleDelete} label="Eliminar" />
+        </div>
+      )}
+      {isLoading && <h2>Cargando...</h2>}
+
+      <div className="card-grid">
+        {images.map((image) => (
+          <GifItem key={image.id} {...image} />
+        ))}
+      </div>
+    </div>
   );
 };
