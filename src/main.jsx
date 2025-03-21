@@ -7,12 +7,12 @@ console.log(import.meta.env);
 
 const root = createRoot(document.getElementById("root"));
 
-if (import.meta.env.MODE === "development") {
-  root.render(
-    <StrictMode>
-      <GifExpertApp />
-    </StrictMode>
-  );
-} else {
-  root.render(<GifExpertApp />);
-}
+// if (import.meta.env.MODE === "development") {
+//   root.render(
+//     <StrictMode>
+//       <GifExpertApp />
+//     </StrictMode>
+//   );
+// } else {
+root.render(<GifExpertApp />);
+// }
