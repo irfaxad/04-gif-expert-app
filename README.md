@@ -10,20 +10,31 @@ Todas las búsquedas se acumularán en la página, y podrá eliminar alguna secc
 
 ## Instalación
 
-* Clone este repositorio en su ordenador. Tome nota de la carpeta en la que guardó este repositorio (por ejemplo: */usr/source/gifexpertapp*).
-* Abra la Terminal desde la carpeta donde clonó el repositorio, y ejecute:
+- Clone este repositorio en su ordenador. Tome nota de la carpeta en la que guardó este repositorio (por ejemplo: _/usr/source/gifexpertapp_).
+- Abra la Terminal desde la carpeta donde clonó el repositorio, y ejecute:
 
-```BASH
+```bash
 yarn install
 ```
 
-* Una vez que se terminen de instalar las dependencias, ejecute lo siguiente para visualizar GifExpertApp:
+- Una vez que se terminen de instalar las dependencias, ejecute lo siguiente para visualizar GifExpertApp:
 
 ```bash
 yarn dev
 ```
 
-* Para modificarlo, puede visualizar la carpeta clonada en su editor de código preferido (se recomienda Visual Studio Code).
+- Para modificarlo, puede visualizar la carpeta clonada en su editor de código preferido (se recomienda Visual Studio Code).
+- El proyecto incorpora ESLint para validar que el código cumple con los estándares en la industria. Para ejecutar ESLint, utilice el siguiente comando:
+
+```bash
+yarn lint
+```
+
+* Para exportar el proyecto a Producción, ejecute lo siguiente:
+
+```bash
+yarn build
+```
 
 ### API KEY de GIPHY
 
