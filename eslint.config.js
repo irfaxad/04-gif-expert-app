@@ -30,4 +30,22 @@ export default [
       ],
     },
   },
+  // Configuración específica para archivos de prueba
+  {
+    files: ["**/*.test.{js,jsx}", "**/*.spec.{js,jsx}"],
+    languageOptions: {
+      globals: {
+        ...globals.jest,
+        describe: "readonly",
+        test: "readonly",
+        it: "readonly",
+        expect: "readonly",
+        beforeEach: "readonly",
+        afterEach: "readonly",
+        beforeAll: "readonly",
+        afterAll: "readonly",
+        jest: "readonly"
+      }
+    }
+  }
 ];
